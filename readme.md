@@ -1,7 +1,7 @@
 # Учебный проект «Куплю. Продам» [![Build status][travis-image]][travis-url]
 
 * Студент: [Алексей Захаренко](https://up.htmlacademy.ru/nodejs/3/user/1708501).
-* Наставник: `Неизвестно`.
+* Наставник: [Никита Куцелай](https://htmlacademy.ru/profile/id32750).
 
 ---
 
