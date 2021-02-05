@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require(`fs`);
+const path = require(`path`);
 
 const {
   getRandomInt,
@@ -10,7 +11,8 @@ const {ExitCode} = require(`../constants`);
 
 const DEFAULT_COUNT = 1;
 const MAX_COUNT = 1000;
-const FILE_NAME = `../../mocks.json`;
+const FILE_NAME = path.join(__dirname, `../../../`, `mocks.json`);
+
 
 const TITLES = [
   `Продам книги Стивена Кинга.`,
