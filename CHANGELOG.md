@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.1.0...v1.1.1) (2021-02-27)
+
+
+### Bug Fixes
+
+* version scripts ([3b8b3c7](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/3b8b3c7d49fbb9b162a57ae285c6f8b33ab6ad1a))
+
 ## 1.1.0 (2021-02-27)
 
 
