@@ -1,12 +1,14 @@
 {
   "name": "1708501-buy-and-sell-3",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "Куплю. Продам",
   "main": "./src/service/service.js",
   "scripts": {
     "test": "npm run eslint",
     "eslint": "eslint --ext .js src/",
-    "start": "node ./src/service/service.js"
+    "start": "node ./src/service/service.js",
+    "bump": "standard-version",
+    "postbump": "git push origin --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,9 @@
   "devDependencies": {
     "eslint": "7.19.0",
     "eslint-config-htmlacademy": "0.6.0"
+  },
+  "dependencies": {
+    "chalk": "4.1.0",
+    "standard-version": "9.1.1"
   }
 }
