@@ -7,58 +7,22 @@ const chalk = require(`chalk`);
 const {
   getRandomInt,
   shuffle,
+  readContent,
 } = require(`../../utils`);
 const {ExitCode} = require(`../constants`);
+
+const FILE_SENTENCES_PATH = path.join(__dirname, `../../../`, `data`, `sentences.txt`);
+const FILE_TITLES_PATH = path.join(__dirname, `../../../`, `data`, `titles.txt`);
+const FILE_CATEGORIES_PATH = path.join(__dirname, `../../../`, `data`, `categories.txt`);
 
 const DEFAULT_COUNT = 1;
 const MAX_COUNT = 1000;
 const FILE_NAME = path.join(__dirname, `../../../`, `mocks.json`);
 
-
-const TITLES = [
-  `Продам книги Стивена Кинга.`,
-  `Продам новую приставку Sony Playstation 5.`,
-  `Продам отличную подборку фильмов на VHS.`,
-  `Куплю антиквариат.`,
-  `Куплю породистого кота.`,
-  `Продам коллекцию журналов «Огонёк».`,
-  `Отдам в хорошие руки подшивку «Мурзилка».`,
-  `Продам советскую посуду. Почти не разбита.`,
-  `Куплю детские санки.`,
-];
-
-const SENTENCES = [
-  `Товар в отличном состоянии.`,
-  `Пользовались бережно и только по большим праздникам.,`,
-  `Продаю с болью в сердце...`,
-  `Бонусом отдам все аксессуары.`,
-  `Даю недельную гарантию.`,
-  `Если товар не понравится — верну всё до последней копейки.`,
-  `Это настоящая находка для коллекционера!`,
-  `Если найдёте дешевле — сброшу цену.`,
-  `Таких предложений больше нет!`,
-  `Две страницы заляпаны свежим кофе.`,
-  `При покупке с меня бесплатная доставка в черте города.`,
-  `Кажется, что это хрупкая вещь.`,
-  `Мой дед не мог её сломать.`,
-  `Кому нужен этот новый телефон, если тут такое...`,
-  `Не пытайтесь торговаться. Цену вещам я знаю.`,
-];
-
-const CATEGORIES = [
-  `Книги`,
-  `Разное`,
-  `Посуда`,
-  `Игры`,
-  `Животные`,
-  `Журналы`,
-];
-
 const OfferType = {
   OFFER: `offer`,
   SALE: `sale`,
 };
-
 
 const SumRestrict = {
   MIN: 1000,
@@ -72,14 +36,14 @@ const PictureRestrict = {
 
 const getPictureFileName = (num) => `item${num < 10 ? `0` + num : num}.jpg`;
 
-const generateOffers = (count) => {
+const generateOffers = (count, titles, categories, sentences) => {
   return Array(count).fill({}).map(() => ({
-    title: TITLES[getRandomInt(0, TITLES.length - 1)],
+    title: titles[getRandomInt(0, titles.length - 1)],
     picture: getPictureFileName(getRandomInt(PictureRestrict.MIN, PictureRestrict.MAX)),
-    description: shuffle(SENTENCES).slice(1, 5).join(` `),
+    description: shuffle(sentences).slice(1, 5).join(` `),
     type: Object.values(OfferType)[Math.floor(Math.random() * Object.values(OfferType).length)],
     sum: getRandomInt(SumRestrict.MIN, SumRestrict.MAX),
-    category: shuffle(CATEGORIES).slice(0, getRandomInt(1, CATEGORIES.length - 1)),
+    category: shuffle(categories).slice(0, getRandomInt(1, categories.length - 1)),
   }));
 };
 
@@ -94,7 +58,12 @@ module.exports = {
       process.exit(ExitCode.uncaughtFatalException);
     }
 
-    const content = JSON.stringify(generateOffers(countOffer));
+    const titles = await readContent(FILE_TITLES_PATH);
+    const categories = await readContent(FILE_CATEGORIES_PATH);
+    const sentences = await readContent(FILE_SENTENCES_PATH);
+
+    const content = JSON.stringify(generateOffers(countOffer, titles, categories, sentences));
+
     try {
       await fs.writeFile(FILE_NAME, content);
       console.info(chalk.green(`Operation success. File created.`));

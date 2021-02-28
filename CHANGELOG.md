@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.1.2...v1.2.0) (2021-02-28)
+
+
+### Features
+
+* добавил чтение контента из файлов ([5a2b7c7](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/5a2b7c79c47061f271bcf27b7d67c9a8465a5078))
+
 ### [1.1.2](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.1.1...v1.1.2) (2021-02-27)
 
 ### [1.1.1](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.1.0...v1.1.1) (2021-02-27)
