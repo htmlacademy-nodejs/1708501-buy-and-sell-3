@@ -15,9 +15,9 @@ const FILE_SENTENCES_PATH = path.join(__dirname, `../../../`, `data`, `sentences
 const FILE_TITLES_PATH = path.join(__dirname, `../../../`, `data`, `titles.txt`);
 const FILE_CATEGORIES_PATH = path.join(__dirname, `../../../`, `data`, `categories.txt`);
 
+const FILE_NAME = path.join(__dirname, `../../../`, `mocks.json`);
 const DEFAULT_COUNT = 1;
 const MAX_COUNT = 1000;
-const FILE_NAME = path.join(__dirname, `../../../`, `mocks.json`);
 
 const OfferType = {
   OFFER: `offer`,
