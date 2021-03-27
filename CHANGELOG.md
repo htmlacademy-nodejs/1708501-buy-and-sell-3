@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.3.2...v1.4.0) (2021-03-26)
+
+
+### Features
+
+* blank for routing ([f0aa636](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/f0aa63626c91d835f5ef81f3e4d38ea34b9e329d))
+
 ### [1.3.2](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.3.1...v1.3.2) (2021-02-28)
 
 ### [1.3.1](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.3.0...v1.3.1) (2021-02-28)
