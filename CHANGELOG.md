@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.4.0...v1.5.0) (2021-03-27)
+
+
+### Features
+
+* add basic templates ([f0c161f](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/f0c161f97e28b5b32ca6e33cc40b01c9b43abb1f))
+* main pug templates ([48da9cc](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/48da9cc480b296c8fc378e97c249a6dae66bf3b9))
+
 ## [1.4.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.3.2...v1.4.0) (2021-03-26)
 
 

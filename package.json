@@ -1,6 +1,6 @@
 {
   "name": "1708501-buy-and-sell-3",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Куплю. Продам",
   "main": "./src/service/service.js",
   "scripts": {
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "chalk": "4.1.0",
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "pug": "3.0.2"
   }
 }
