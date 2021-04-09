@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.5.0...v1.6.0) (2021-04-09)
+
+
+### Features
+
+* переход на express сервер ([5d45734](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/5d457343c56b0ba13af59b200658bc524a6d3228))
+
 ## [1.5.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.4.0...v1.5.0) (2021-03-27)
 
 
