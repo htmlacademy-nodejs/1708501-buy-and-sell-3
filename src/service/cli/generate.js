@@ -1,21 +1,19 @@
 "use strict";
 
 const fs = require(`fs`).promises;
-const path = require(`path`);
 const chalk = require(`chalk`);
 const {nanoid} = require(`nanoid`);
 
 const {getRandomInt, shuffle, readContent} = require(`../../utils`);
 const {
   ExitCode,
+  MOCKS_FILE_NAME,
+  FILE_SENTENCES_PATH,
+  FILE_TITLES_PATH,
+  FILE_CATEGORIES_PATH,
+  FILE_COMMENTS_PATH,
   MAX_ID_LENGTH,
 } = require(`../constants`);
-
-const MOCKS_FILE_NAME = path.join(__dirname, `../../../`, `mocks.json`);
-const FILE_SENTENCES_PATH = path.join(__dirname, `../../../`, `data`, `sentences.txt`);
-const FILE_TITLES_PATH = path.join(__dirname, `../../../`, `data`, `titles.txt`);
-const FILE_CATEGORIES_PATH = path.join(__dirname, `../../../`, `data`, `categories.txt`);
-const FILE_COMMENTS_PATH = path.join(__dirname, `../../../`, `data`, `comments.txt`);
 
 const DEFAULT_COUNT = 1;
 const MAX_COUNT = 1000;
@@ -80,10 +78,17 @@ module.exports = {
       process.exit(ExitCode.uncaughtFatalException);
     }
 
-    const titles = await readContent(FILE_TITLES_PATH);
-    const categories = await readContent(FILE_CATEGORIES_PATH);
-    const sentences = await readContent(FILE_SENTENCES_PATH);
-    const comments = await readContent(FILE_COMMENTS_PATH);
+    const [
+      titles,
+      categories,
+      sentences,
+      comments
+    ] = await Promise.all([
+      readContent(FILE_TITLES_PATH),
+      readContent(FILE_CATEGORIES_PATH),
+      readContent(FILE_SENTENCES_PATH),
+      readContent(FILE_COMMENTS_PATH)
+    ]);
 
     const content = JSON.stringify(
         generateOffers(countOffer, titles, categories, sentences, comments)
