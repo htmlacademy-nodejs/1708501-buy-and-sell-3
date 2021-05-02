@@ -1,12 +1,12 @@
 'use strict';
 
-const path = require(`path`);
-
 const DEFAULT_COMMAND = `--help`;
 
 const USER_ARGV_INDEX = 2;
 
-const MOCKS_FILE_NAME = path.join(__dirname, `../../`, `mocks.json`);
+const DEFAULT_PORT = 3000;
+
+const MAX_ID_LENGTH = 6;
 
 const ExitCode = {
   success: 0,
@@ -14,7 +14,6 @@ const ExitCode = {
   invalidArgument: 9,
 };
 
-const DEFAULT_PORT = 3000;
 
 const HttpCode = {
   OK: 200,
@@ -28,7 +27,7 @@ module.exports = {
   DEFAULT_COMMAND,
   USER_ARGV_INDEX,
   DEFAULT_PORT,
-  MOCKS_FILE_NAME,
+  MAX_ID_LENGTH,
   ExitCode,
   HttpCode
 };
