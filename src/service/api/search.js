@@ -15,10 +15,14 @@ module.exports = (app, service) => {
  */
   route.get(`/`, (req, res) => {
     const {query} = req.query;
-    const offers = service.findAll(query);
 
+    if (!query) {
+      return res.status(HttpCode.BAD_REQUEST).json([]);
+    }
+
+    const offers = service.findAll(query);
     const httpStatus = offers.length > 0 ? HttpCode.OK : HttpCode.NOT_FOUND;
-    res.status(httpStatus)
+    return res.status(httpStatus)
       .json(offers);
   });
 };
