@@ -32,6 +32,11 @@ const HttpCode = {
   INTERNAL_SERVER_ERROR: 500
 };
 
+const Env = {
+  DEVELOPMENT: `development`,
+  PRODUCTION: `production`
+};
+
 module.exports = {
   DEFAULT_COMMAND,
   USER_ARGV_INDEX,
@@ -44,5 +49,6 @@ module.exports = {
   FILE_COMMENTS_PATH,
   MAX_ID_LENGTH,
   ExitCode,
-  HttpCode
+  HttpCode,
+  Env
 };
