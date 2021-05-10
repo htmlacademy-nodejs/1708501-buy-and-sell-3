@@ -1,6 +1,6 @@
 {
   "name": "1708501-buy-and-sell-3",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Куплю. Продам",
   "main": "./src/service/service.js",
   "scripts": {
