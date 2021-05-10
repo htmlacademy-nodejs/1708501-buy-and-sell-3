@@ -43,7 +43,7 @@ DELETE http://localhost:3000/api/offers/ZpSDNG
 
 ###
 # GET /api/offers/:offerId/comments — возвращает список комментариев определённого объявления;
-GET http://localhost:3000/api/offers/ZpSDNG/comments
+GET http://localhost:3000/api/offers/QsiqjS/comments
 
 ###
 # DELETE /api/offers/:offerId/comments/:commentId — удаляет из определённой публикации комментарий с идентификатором;
