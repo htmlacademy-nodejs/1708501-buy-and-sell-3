@@ -8,9 +8,10 @@ const offerValidator = require(`../middlewares/offerValidator`);
 const offerExist = require(`../middlewares/offerExist`);
 const commentValidator = require(`../middlewares/commentValidator`);
 
-const route = new Router();
 
 module.exports = (app, offerService, commentService) => {
+  const route = new Router();
+
   app.use(`/offers`, route);
 
   // GET /api/offers - возвращает список объявлений
@@ -52,14 +53,15 @@ module.exports = (app, offerService, commentService) => {
   route.put(`/:offerId`, offerValidator, (req, res) => {
     const {offerId} = req.params;
     const offer = offerService.findOne(offerId);
-    const updated = offerService.update(offerId, req.body);
 
-    if (!updated) {
+    if (!offer) {
       return res.status(HttpCode.NOT_FOUND).send(`Not found with ${offerId}`);
     }
 
+    const updated = offerService.update(offerId, req.body);
     return res.status(HttpCode.OK).json(offer);
   });
+
 
   // DELETE /api/offers/:offerId - удаляет определённое объявление
   route.delete(`/:offerId`, (req, res) => {
