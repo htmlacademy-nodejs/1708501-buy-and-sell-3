@@ -3,9 +3,10 @@
 const {Router} = require(`express`);
 const {HttpCode} = require(`../constants`);
 
-const route = new Router();
 
 module.exports = (app, service) => {
+  const route = new Router();
+
   app.use(`/search`, route);
 
   /*
@@ -15,10 +16,14 @@ module.exports = (app, service) => {
  */
   route.get(`/`, (req, res) => {
     const {query} = req.query;
-    const offers = service.findAll(query);
 
+    if (!query) {
+      return res.status(HttpCode.BAD_REQUEST).json([]);
+    }
+
+    const offers = service.findAll(query);
     const httpStatus = offers.length > 0 ? HttpCode.OK : HttpCode.NOT_FOUND;
-    res.status(httpStatus)
+    return res.status(httpStatus)
       .json(offers);
   });
 };

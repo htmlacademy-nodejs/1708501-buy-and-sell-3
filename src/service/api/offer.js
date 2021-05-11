@@ -8,9 +8,10 @@ const offerValidator = require(`../middlewares/offerValidator`);
 const offerExist = require(`../middlewares/offerExist`);
 const commentValidator = require(`../middlewares/commentValidator`);
 
-const route = new Router();
 
 module.exports = (app, offerService, commentService) => {
+  const route = new Router();
+
   app.use(`/offers`, route);
 
   // GET /api/offers - возвращает список объявлений
@@ -49,34 +50,30 @@ module.exports = (app, offerService, commentService) => {
 
 
   // PUT /api/offers/:offerId - редактирует определённое объявление
-  route.put(`/:offerId`, offerValidator, (req, res) => {
+  route.put(`/:offerId`, offerExist(offerService), offerValidator, (req, res) => {
     const {offerId} = req.params;
-    const offer = offerService.findOne(offerId);
-    const updated = offerService.update(offerId, req.body);
-
-    if (!updated) {
-      return res.status(HttpCode.NOT_FOUND).send(`Not found with ${offerId}`);
-    }
-
-    return res.status(HttpCode.OK).json(offer);
+    const updatedOffer = offerService.update(offerId, req.body);
+    return res.status(HttpCode.OK).json(updatedOffer);
   });
 
-  // DELETE /api/offers/:offerId - удаляет определённое объявление
-  route.delete(`/:offerId`, (req, res) => {
-    const {offerId} = req.params;
-    const offer = offerService.drop(offerId);
 
-    if (!offer) {
+  // DELETE /api/offers/:offerId - удаляет определённое объявление
+  route.delete(`/:offerId`, offerExist(offerService), (req, res) => {
+    const {offerId} = req.params;
+    const deletedOffer = offerService.drop(offerId);
+
+    if (!deletedOffer) {
       return res.status(HttpCode.NOT_FOUND).send(`Not found with ${offerId}`);
     }
 
-    return res.status(HttpCode.OK).json(offer);
+    return res.status(HttpCode.OK).json(deletedOffer);
   });
 
   // GET /api/offers/:offerId/comments — возвращает список комментариев определённого объявления
   route.get(`/:offerId/comments`, offerExist(offerService), (req, res) => {
     const {offerId} = req.params;
-    const comments = commentService.findAll(offerId);
+    const {offer} = res.locals;
+    const comments = commentService.findAll(offer);
 
     if (!comments) {
       return res.status(HttpCode.NOT_FOUND).send(`Not found comments with ${offerId}`);
@@ -90,7 +87,7 @@ module.exports = (app, offerService, commentService) => {
     const {offer} = res.locals;
     const comment = commentService.create(offer, req.body);
 
-    return res.status(HttpCode.OK).json(comment);
+    return res.status(HttpCode.CREATED).json(comment);
   });
 
   // DELETE /api/offers/:offerId/comments/:commentId — удаляет из определённой публикации комментарий с идентификатором

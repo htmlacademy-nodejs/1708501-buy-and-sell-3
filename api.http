@@ -3,7 +3,7 @@ GET http://localhost:3000/api/offers
 
 ###
 # GET /api/offers/:offerId — возвращает полную информацию определённого объявления;
-GET http://localhost:3000/api/offers/lNfoyA
+GET http://localhost:3000/api/offers/ZpSDNG
 
 ###
 # GET /api/categories — возвращает список категорий;
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 # PUT /api/offers/:offerId — редактирует определённое объявление;
-PUT http://localhost:3000/api/offers/lNfoyA
+PUT http://localhost:3000/api/offers/ZpSDNG
 Content-Type: application/json
 
 {
@@ -39,19 +39,19 @@ Content-Type: application/json
 
 ###
 # DELETE /api/offers/:offerId — удаляет определённое объявление;
-DELETE http://localhost:3000/api/offers/lNfoyA
+DELETE http://localhost:3000/api/offers/ZpSDNG
 
 ###
 # GET /api/offers/:offerId/comments — возвращает список комментариев определённого объявления;
-GET http://localhost:3000/api/offers/lNfoyA/comments
+GET http://localhost:3000/api/offers/QsiqjS/comments
 
 ###
 # DELETE /api/offers/:offerId/comments/:commentId — удаляет из определённой публикации комментарий с идентификатором;
-DELETE http://localhost:3000/api/offers/lNfoyA/comments/SA_b34
+DELETE http://localhost:3000/api/offers/ZpSDNG/comments/SA_b34
 
 ###
 # POST /api/offers/:offerId/comments — создаёт новый комментарий;
-POST http://localhost:3000/api/offers/lNfoyA/comments
+POST http://localhost:3000/api/offers/ZpSDNG/comments
 Content-Type: application/json
 
 {

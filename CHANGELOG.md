@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.6.0...v1.7.0) (2021-05-10)
+
+
+### Features
+
+* добавил API роутинг и базовую валидацию ([fba1c64](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/fba1c6456ef52e72c27bca1a2218043220760ad7))
+* добавил генерацию комментариев ([eaf5834](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/eaf58341a60b0a91ec51a4a6df9d326a4c75a25c))
+* добавил тесты для офферов ([8ec998c](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/8ec998c27320f00e86fd4ff84450c8302f2a1a51))
+* добавил тесты для поиска и категорий ([4e187fe](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/4e187fe3b0be88dfe99376fd2276022abe415c3f))
+* покрыл тестами API комментариев ([8172259](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/8172259d8cb864d2fe058f2c042d6027e31714af))
+* установил логирование с помощью pino ([4e2bcee](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/4e2bceea6ff94f10cd19936f3486d613314a7f58))
+
+
+### Bug Fixes
+
+* изменил запускаемый скрипт в package.json ([8c3777a](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/8c3777a57f3a1d386c6b75a4b8b492853287a023))
+
 ## [1.6.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.5.0...v1.6.0) (2021-04-09)
 
 
