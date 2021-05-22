@@ -26,7 +26,11 @@ const upload = multer({storage});
 
 offersRouter.get(`/category/:id`, (req, res) => res.render(`offers/category`));
 
-offersRouter.get(`/add`, (req, res) => res.render(`offers/new-ticket`));
+offersRouter.get(`/add`, async (req, res) => {
+  const categories = await api.getCategories();
+  res.render(`offers/new-ticket`, {categories});
+});
+
 offersRouter.post(`/add`,
     upload.single(`avatar`), // применяем middleware
     async (req, res) => {
@@ -61,6 +65,10 @@ offersRouter.get(`/edit/:id`, async (req, res) => {
   res.render(`offers/ticket-edit`, {offer, categories});
 });
 
-offersRouter.get(`/:id`, (req, res) => res.render(`offers/ticket`));
+offersRouter.get(`/:id`, async (req, res) => {
+  const {id} = req.params;
+  const item = await api.getOfferId(id);
+  res.render(`offers/ticket`, {item});
+});
 
 module.exports = offersRouter;
