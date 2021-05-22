@@ -48,7 +48,7 @@ offersRouter.post(`/add`,
       };
 
       try {
-        await api.post(`/offers`, offerData);
+        await api.createOffer(offerData);
         res.redirect(`/my`);
       } catch (e) {
         res.redirect(`back`);
@@ -58,11 +58,11 @@ offersRouter.post(`/add`,
 
 offersRouter.get(`/edit/:id`, async (req, res) => {
   const {id} = req.params;
-  const [offer, categories] = await Promise.all([
+  const [item, categories] = await Promise.all([
     api.getOffer(id),
     api.getCategories()
   ]);
-  res.render(`offers/ticket-edit`, {offer, categories});
+  res.render(`offers/ticket-edit`, {item, categories});
 });
 
 offersRouter.get(`/:id`, async (req, res) => {
