@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.7.0...v1.8.0) (2021-05-23)
+
+
+### Features
+
+* добавил загрузку файлов ([a8ebc02](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/a8ebc0271dbcfc3da79bb2b19ace07b08d399c8b))
+* добавил обработку my путей ([c487553](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/c487553f6c29f625f3820dc39564d4bcd19f82f2))
+* оживил редактирование тикета и поиск ([5354cfa](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/5354cfa1f2bc23e996554dea8367373d093a4866))
+
+
+### Bug Fixes
+
+* ошибки нейминга ([d52e754](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/d52e75406b5e271c0c03273983e186ec900cc5e1))
+* поправил ссылки в макетах ([8b9477f](https://github.com/YoginAlex/1708501-buy-and-sell-3/commit/8b9477f22193b9db7c0d334262e98f3b9e9e67ef))
+
 ## [1.7.0](https://github.com/YoginAlex/1708501-buy-and-sell-3/compare/v1.6.0...v1.7.0) (2021-05-10)
 
 
